@@ -1,0 +1,25 @@
+.login-bg{
+    background: linear-gradient(to right, #033657, #187473);
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.login-box{
+    padding: 50px 20px;
+    background-color: white;
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    height: 400px;
+    width: 370px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: 3px 6px 30px -2px rgba(33,33,33,0.69);
+    -moz-box-shadow: 3px 6px 30px -2px rgba(33,33,33,0.69);
+    box-shadow: 3px 6px 30px -2px rgba(33,33,33,0.69);
+}

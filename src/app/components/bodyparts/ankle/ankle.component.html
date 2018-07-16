@@ -1,0 +1,83 @@
+<form [formGroup]="ankleForm" novalidate>
+  <div class="container accForm-container">
+
+    <div class="personal-info form-group">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Please fill it out to the best of your ability</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label class="center-block">* TEST1:
+            <input type="text" class="form-control" formControlName="test">
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="center-block">* TEST2:
+            <input type="text" class="form-control w-100" formControlName="TEST2">
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="center-block">* TEST3:
+            <input type="email" class="form-control" formControlName="TEST3">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="center-block">* TEST4:
+            <select class="form-control" formControlName="TEST4" id="sel1">
+              
+              <option value="badHomberg">Bad Homberg, Germany</option>
+              <option value="landshtul">Landshtul, Germany</option>
+              <option value="vicenza">Vicenza, Italy</option>
+              <option value="mestrino">Mestrino, Italy</option>
+              <option value="apartmentLocOther">Other</option>
+            </select>
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label class="center-block">* TEST5:
+            <input type="text" class="form-control" formControlName="TEST5">
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label class="center-block">* TEST6:
+            <input type="time" class="form-control" formControlName="TEST6">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label class="center-block">* TEST7:
+            <select class="form-control" formControlName="TEST7" id="sel1">
+              <option value="army">Army</option>
+              <option value="navy">Navy</option>
+              <option value="marines">Marines</option>
+              <option value="airforce">Airforce</option>
+              <option value="reserve">Reserve</option>
+            </select>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="center-block">* TEST8:
+            <input type="text" class="form-control" formControlName="TEST8">
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="center-block">* TEST9:
+            <input type="text" class="form-control" formControlName="TEST9">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="center-block">* TEST10
+            <textarea type="text" class="form-control" formControlName="TEST10"></textarea>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

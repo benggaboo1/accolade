@@ -1,0 +1,225 @@
+<section>
+  <form [formGroup]="addFactorsForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Additional Factors Contributing to Disability
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+
+        <div class="row align-center">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-1">
+            Right
+          </div>
+          <div class="col-md-1">
+            Left
+          </div>
+          <div class="col-md-4">
+            Describe
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            None
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="noneRight" name="noneRight" formControlName="noneRight">
+            <label for="noneRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="noneLeft" name="noneLeft" formControlName="noneLeft">
+            <label for="noneLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description1"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            Less movement than normal (due to ankylosis, limitation or blocking, adhesions, tendon-tie-ups, contracted scars, etc.)
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="lessMovementRight" name="lessMovementRight" formControlName="lessMovementRight">
+            <label for="lessMovementRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="lessMovementLeft" name="lessMovementLeft" formControlName="lessMovementLeft">
+            <label for="lessMovementLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description2"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            More movement than normal (from flail joints, resections, nonunion of fractures, relaxation of ligaments, etc..)
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="moreMovementRight" name="moreMovementRight" formControlName="moreMovementRight">
+            <label for="moreMovementRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="moreMovementLeft" name="moreMovementLeft" formControlName="moreMovementLeft">
+            <label for="moreMovementLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description3"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            Weakened movement (due to muscle injury, disease or injury of peripheral nerves, divided or lengthened tendons, etc.)
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="weakenedMovementRight" name="weakenedMovementRight" formControlName="weakenedMovementRight">
+            <label for="weakenedMovementRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="weakenedMovementLeft" name="weakenedMovementLeft" formControlName="weakenedMovementLeft">
+            <label for="weakenedMovementLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description4"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            Swelling
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="swellingRight" name="swellingRight" formControlName="swellingRight">
+            <label for="swellingRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="swellingLeft" name="swellingLeft" formControlName="swellingLeft">
+            <label for="swellingLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description5"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            Deformity
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="deformityRight" name="deformityRight" formControlName="deformityRight">
+            <label for="deformityRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="deformityLeft" name="deformityLeft" formControlName="deformityLeft">
+            <label for="deformityLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description6"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            Atrophy of disuse
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="atrophyOfDisuseRight" name="atrophyOfDisuseRight" formControlName="atrophyOfDisuseRight">
+            <label for="atrophyOfDisuseRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="atrophyOfDisuseLeft" name="atrophyOfDisuseLeft" formControlName="atrophyOfDisuseLeft">
+            <label for="atrophyOfDisuseLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description7"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            Instability of station
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="instabilityOfStationRight" name="instabilityOfStationRight" formControlName="instabilityOfStationRight">
+            <label for="instabilityOfStationRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="instabilityOfStationLeft" name="instabilityOfStationLeft" formControlName="instabilityOfStationLeft">
+            <label for="instabilityOfStationLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description8"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            Disturbance of locomotion
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="locomotionDisturbanceRight" name="locomotionDisturbanceRight" formControlName="locomotionDisturbanceRight">
+            <label for="locomotionDisturbanceRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="locomotionDisturbanceLeft" name="locomotionDisturbanceLeft" formControlName="locomotionDisturbanceLeft">
+            <label for="locomotionDisturbanceLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description9"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" class="form-control" formControlName="other" placeholder="Others, describe">
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="otherRight" name="otherRight" formControlName="otherRight">
+            <label for="otherRight"></label>
+          </div>
+          <div class="col-md-1 round">
+            <input class="mr-3" type="checkbox" id="otherLeft" name="otherLeft" formControlName="otherLeft">
+            <label for="otherLeft"></label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="description10"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

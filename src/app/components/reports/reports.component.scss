@@ -1,0 +1,30 @@
+.nav-forms{
+    background-color: #0056b3;
+    margin-right: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.nav-forms a{
+    color: white;
+}
+
+.active{
+    background-color: white;
+}
+
+.active a{
+    color: #0056b3 ;
+}
+
+.add-form{
+    align-self: center;
+    cursor: pointer;
+}
+
+.add-form i{
+    font-size: 30px;
+    color: #233b73;
+    vertical-align: middle;
+
+}

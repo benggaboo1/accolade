@@ -1,0 +1,234 @@
+<section>
+  <form [formGroup]="assistiveDevicesForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Assistive Devices
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+
+        <div class="row align-center">
+          <div class="col-md-3">
+            <label class="center-block">
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Right
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Left
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Comments
+            </label>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Wheelchair
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="wheelChairRight" id="wheelChairRight">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="wheelChairLeft" id="wheelChairLeft">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="wheelChairComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Brace
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="braceRight" id="braceRight">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="braceLeft" id="braceLeft">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="braceComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Crutches
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="crutchesRight" id="crutchesRight">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="crutchesLeft" id="crutchesLeft">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="crutchesComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Cane
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="caneRight" id="caneRight">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="caneLeft" id="caneLeft">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="caneComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Walker
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="walkerRight" id="walkerRight">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="walkerLeft" id="walkerLeft">
+              <option value="">Select Option</option>
+              <option value="notUsed">not used</option>
+              <option value="constantly">used constantly</option>
+              <option value="regularly">used regularly</option>
+              <option value="occassionally">used occassionally</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="walkerComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+        <div formArrayName="items" *ngFor="let item of assistiveDevicesForm.get('items').controls; let i = index;">
+          <div class="row" [formGroupName]="i">
+            <div class="col-md-3">
+              <input type="text" class="form-control" formControlName="otherName" (keyup.enter)="addItem()">
+            </div>
+            <div class="col-md-3">
+              <select class="form-control" formControlName="otherRight" id="otherRight">
+                <option value="">Select Option</option>
+                <option value="notUsed">not used</option>
+                <option value="constantly">used constantly</option>
+                <option value="regularly">used regularly</option>
+                <option value="occassionally">used occassionally</option>
+                <option value="na">N/A</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <select class="form-control" formControlName="otherLeft" id="otherLeft">
+                <option value="">Select Option</option>
+                <option value="notUsed">not used</option>
+                <option value="constantly">used constantly</option>
+                <option value="regularly">used regularly</option>
+                <option value="occassionally">used occassionally</option>
+                <option value="na">N/A</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <textarea type="text" class="form-control" formControlName="otherComments"></textarea>
+            </div>
+          </div>
+          <hr>
+        </div>
+    
+      </div>
+    </div>
+  </form>
+</section>

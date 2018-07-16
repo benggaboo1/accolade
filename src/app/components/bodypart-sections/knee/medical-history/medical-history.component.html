@@ -1,0 +1,327 @@
+<section>
+  <form [formGroup]="medHistoryForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Medical History
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+        <!-- <div class="rightKneeColumn"> &nbsp; </div>
+        <div class="leftKneeColumn"> &nbsp; </div> -->
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Final Diagnosis by Dr. Broomes:
+            </label>
+          </div>
+          <div class="col-md-8">
+            <div formArrayName="finalDiagnoses" *ngFor="let finalDiagnosis of medHistoryForm.get('finalDiagnoses').controls; let i = index;">
+              <div [formGroupName]="i">
+                <input type="text" class="form-control mb-10" formControlName="finalDiagnosis" (keyup.enter)="addFinalDiagnoses()"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Diagnosis
+            </label>
+          </div>
+          <div class="col-md-8">
+              <div formArrayName="diagnoses" *ngFor="let diagnosis of medHistoryForm.get('diagnoses').controls; let i = index;">
+                <div [formGroupName]="i">
+                  <input type="text" class="form-control mb-10" formControlName="diagnosis" (keyup.enter)="addDiagnoses()"/>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Service Period
+            </label>
+          </div>
+          <div class="col-md-8">
+            <textarea type="text" class="form-control" formControlName="servicePeriod"></textarea>
+          </div>
+        </div> -->
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-4 align-center">
+            Right Knee
+          </div>
+          <div class="col-md-4 align-center">
+            Left Knee
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Date of onset
+            </label>
+          </div>
+          <div class="col-md-4">
+            <div class="input-group" style="box-shadow: 0 1px 1px 0px #233b7245 !important">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" style="box-shadow: none !important" formControlName="dateOfOnsetRight">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="input-group" style="box-shadow: 0 1px 1px 0px #233b7245 !important">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" style="box-shadow: none !important" formControlName="dateOfOnsetLeft">
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Details of onset
+            </label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="detailsOfOnsetRight"></textarea>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="detailsOfOnsetLeft"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Current Symptoms
+            </label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="currentSympRight"></textarea>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="currentSympLeft"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Have the symptoms improved, progressed or stayed the same?
+            </label>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="sympProgressRight"></textarea>
+          </div>
+          <div class="col-md-4">
+            <textarea type="text" class="form-control" formControlName="sympProgressLeft"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Medications
+            </label>
+          </div>
+          <div class="col-md-8">
+            <textarea type="text" class="form-control" formControlName="medications"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Prior Treatments
+            </label>
+          </div>
+          <div class="col-md-8">
+            <textarea type="text" class="form-control" formControlName="priorTreatments"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Does the veteran report that flare-ups impact the function of the hip/thigh? (Include duration, frequency and
+              severity)
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="radio" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio" />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="flareUpsImpact"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Does the Veteran report having any functional loss or functional impairment not limited to repeated use over
+              time?
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="radio1" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio1" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio1" />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="lossImparement"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Further limitations during a flare-up
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="radio2" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio2" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio2" />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="flareUpLimit"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Further limitations after repetitive use
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="radio3" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio3" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio3" />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="repUseLimit"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">EVIDENCE COMMENTS
+            </label>
+          </div>
+          <div class="col-md-8">
+            <textarea type="text" rows="3" class="form-control" formControlName="evidenceComments"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

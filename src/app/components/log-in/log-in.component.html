@@ -1,0 +1,45 @@
+<div class="login-bg">
+  <div class="container-fluid">
+      <div class="row justify-content-center">
+          <div class="col-lg-4">
+              <div class=" login-box">
+                  <div class="row justify-content-center pb-20">
+
+                      <img class="margin-50-t margin-10-bimg-fluid" src="../../assets/acc-logo.png" alt="Card image cap">
+
+                  </div>
+                  <div class="card-body">
+                      <form class="padding-15" [formGroup]="loginForm">
+                          <div class="form-group">
+                              <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                              <div class="input-group mb-2 mb-sm-0">
+                                <!-- <div class="input-group-addon"><i class="material-icons">lock</i></div> -->
+                              <input type="text" formControlName="userName" name="userName" class="form-control"
+                                      id="userName" placeholder="User Name"/>
+                                    </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="sr-only" for="xlogPassword" required>Password</label>
+                              <div class="input-group mb-2 mb-sm-0">
+                                  <!-- <div class="input-group-addon"><i class="material-icons">lock</i></div> -->
+                                  <input type="password" formControlName="userName" name="xlogPassword"  class="form-control"
+                                      id="xlogPassword" placeholder="Password" required/>
+
+                              </div>
+                              <div class="text-center">
+                                  <div class="error-msg">
+                                      <span></span>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <button class="btn btn-block btn-primary " (click)="login()">Log-in</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

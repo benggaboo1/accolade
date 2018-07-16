@@ -1,0 +1,50 @@
+<section>
+  <div class="forms-container">
+    <div class="nav-subpages row paddingless-b">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs ">
+          <li class="nav-item nav-forms" *ngFor="let chosenForm of chosenForms" [routerLinkActive]="['active']">
+            <a class="nav-link" [routerLink]="[chosenForm.code]">{{chosenForm.label}}</a>
+          </li>
+          <li class="add-form" (click)="addForm()">
+            <i class="material-icons ">
+              add_box
+            </i>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="subpage-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <!-- CONTACT US MODAL -->
+  <div bsModal #addFormModal="bs-modal" id="addFormModal" class="modal fade center " tabindex="-1" role="dialog" aria-labelledby="addFormModalLabel"
+    aria-hidden="true" [config]="{backdrop:'static'}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title text-left padding-20-b">Add Additional DBQ</h6>
+          <br>
+          <button type="button" class="close pull-right cursor-pointer" aria-label="Close" (click)="resetAndClose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid padding-15-b">
+            
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary btn-sm cursor-pointer">
+            Save
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-sm cursor-pointer" (click)="resetAndClose()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

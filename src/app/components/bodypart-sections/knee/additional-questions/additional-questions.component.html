@@ -1,0 +1,64 @@
+<section>
+  <form [formGroup]="addQuestionsForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Additional Questions
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+
+        <div class="row">
+          <div class="col-md-12">
+            <label class="center-block">The Veteran's established diagnosis is:
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <textarea type="text" rows="3" class="form-control" formControlName="establishedDiagnosis"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-12">
+            <label class="center-block">If you have provided any additional diagnoses, or if established diagnosis has changed in any way, please select
+              at least one from the following:
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <select class="form-control" formControlName="establishedDiagnosisSelect" id="establishedDiagnosisSelect">
+              <option value="">Select Option</option>
+              <option value="A">A. THERE IS NO CHANGE IN THE SERVICE CONNECTED DIAGNOSIS AND NO ADDITIONAL DIAGNOSES HAVE BEEN RENDERED.</option>
+              <option value="B">B. THE NEW DIAGNOSIS IS A CORRECTION OF THE PREVIOUS DIAGNOSIS</option>
+              <option value="C">C. THERE IS A WORSENING OF THE VETERAN'S SYMPTOMS HOWEVER NO CHANGE TO THE SERVICE CONNECTED DIAGNOSIS AND
+                NO ADDITIONAL DIAGNOSES HAVE BEEN RENDERED.</option>
+              <option value="D">D. ADDITIONAL CONDITIONS WERE FOUND WHICH ARE DIRECTLY DUE TO OR RELATED TO THE SERVICE CONNECTED DIAGNOSIS
+                (I.E. A PROGRESSION)</option>
+              <option value="E">E. ADDITIONAL CONDITIONS WERE FOUND WHICH ARE UNRELATED TO THE SERVICE CONNECTED DIAGNOSIS (I.E. A NEW AND
+                SEPARATE CONDITION). **For option E, please specify which of the veteran's symptoms and/or findings correspond
+                with each diagnosis, if feasible. </option>
+              <option value="F">F. THE SERVICE CONNECTED DIAGNOSIS HAS RESOLVED.</option>
+              <option value="NA">Not Applicable</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

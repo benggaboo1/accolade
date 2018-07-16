@@ -1,0 +1,104 @@
+<section>
+  <form [formGroup]="ankylosisForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Ankylosis
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+
+        <div class="row align-center">
+          <div class="col-md-5">
+          </div>
+          <div class="col-md-2">
+            Right Knee
+          </div>
+          <div class="col-md-2">
+            Left Knee
+          </div>
+          <div class="col-md-3">
+            Remarks
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-5">
+              Favorable angle in full extension or in slight flexion between 0 and 10 degrees
+          </div>
+          <div class="col-md-2">
+            <textarea type="text" class="form-control" formControlName="right1"></textarea>
+          </div>
+          <div class="col-md-2">
+            <textarea type="text" class="form-control" formControlName="left1"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="remarks1"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-5">
+              In flexion between 10 and 20 degrees
+          </div>
+          <div class="col-md-2">
+            <textarea type="text" class="form-control" formControlName="right2"></textarea>
+          </div>
+          <div class="col-md-2">
+            <textarea type="text" class="form-control" formControlName="left2"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="remarks2"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-5">
+              In flexion between 20 and 45 degrees
+          </div>
+          <div class="col-md-2">
+            <textarea type="text" class="form-control" formControlName="right3"></textarea>
+          </div>
+          <div class="col-md-2">
+            <textarea type="text" class="form-control" formControlName="left3"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="remarks3"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-5">
+              Extremely unfavorable, in flexion at an angle of 45 degrees or more
+          </div>
+          <div class="col-md-2">
+            <textarea type="text" class="form-control" formControlName="right4"></textarea>
+          </div>
+          <div class="col-md-2">
+            <textarea type="text" class="form-control" formControlName="left4"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="remarks4"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

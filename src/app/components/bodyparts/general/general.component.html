@@ -1,0 +1,223 @@
+<section>
+  <form [formGroup]="accForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title mt-0" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+          Veterans Evaluation Services General Intake Form
+            </div>
+            <div class="col-md-1 align-right">
+              <i class="material-icons vertical-align">
+                arrow_drop_down
+                </i>
+            </div>
+          </div>
+      </div>
+
+      <div class="medical-history form-group " *ngIf="isShowSection">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Please fill it out to the best of your ability</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">* Last Name:
+              <input type="text" class="form-control" formControlName="lastName" >
+            </label>
+          </div>
+          <div class="col-md-4">
+            <label class="center-block">* First Name:
+              <input type="text" class="form-control w-100" formControlName="firstName">
+            </label>
+          </div>
+          <div class="col-md-4">
+            <label class="center-block">* Email Address:
+              <input type="email" class="form-control" formControlName="email">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label class="center-block">* Appointment Location:
+              <select class="form-control" formControlName="apartmentLoc" id="sel1">
+                <option value="badHomberg">Bad Homberg, Germany</option>
+                <option value="landshtul">Landshtul, Germany</option>
+                <option value="vicenza">Vicenza, Italy</option>
+                <option value="mestrino">Mestrino, Italy</option>
+                <option value="apartmentLocOther">Other</option>
+              </select>
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">* Appointment Date:
+              <input type="text" class="form-control" formControlName="appointmentDate">
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">* Appointment Time:
+              <input type="time" class="form-control" formControlName="appointmentTime">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">* Service Branch:
+              <select class="form-control" formControlName="serviceBranch" id="sel1" >
+                <option value="army">Army</option>
+                <option value="navy">Navy</option>
+                <option value="marines">Marines</option>
+                <option value="airforce">Airforce</option>
+                <option value="reserve">Reserve</option>
+              </select>
+            </label>
+          </div>
+          <div class="col-md-4">
+            <label class="center-block">* Start of Service:
+              <input type="text" class="form-control" formControlName="serviceStart">
+            </label>
+          </div>
+          <div class="col-md-4">
+            <label class="center-block">* End of Service (if applicable):
+              <input type="text" class="form-control" formControlName="serviceEnd"> 
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label class="center-block">* Medications
+              <br> (Please enter dose, frequency, and the condition for which it is prescribed)
+              <textarea type="text" rows="4" class="form-control" formControlName="medications"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label class="center-block">* Alcohol and Tobacco
+              <br> If you don't feel comfortable answering this here then select that option.
+            </label>
+          </div>
+        </div>
+        <div class="row radio-odd">
+          <div class="col-md-2 offset-md-2">
+            <label class="center-block">Yes
+            </label>
+          </div>
+          <div class="col-md-2">
+            <label class="center-block">No
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Prefer not to say in this form
+            </label>
+          </div>
+        </div>
+        <div class="row radio-even">
+          <div class="col-md-2">
+            <label class="center-block">Alcohol
+            </label>
+          </div>
+          <div class="col-md-2 ">
+            <input type="radio" name="alcohol" formControlName="alcohol" value="yes">
+          </div>
+          <div class="col-md-2">
+            <input type="radio" name="alcohol" formControlName="alcohol" value="no">
+          </div>
+          <div class="col-md-3">
+            <input type="radio" name="alcohol" formControlName="alcohol" value="notToSay">
+          </div>
+        </div>
+        <div class="row radio-odd">
+          <div class="col-md-2">
+            <label class="center-block">Tobacco
+            </label>
+          </div>
+          <div class="col-md-2 ">
+            <input type="radio" name="tobacco" formControlName="tobacco" value="yes">
+          </div>
+          <div class="col-md-2">
+            <input type="radio" name="tobacco" formControlName="tobacco" value="no">
+          </div>
+          <div class="col-md-3">
+            <input type="radio" name="tobacco" formControlName="tobacco" value="notToSay">
+          </div>
+        </div>
+        <div class="row radio-even">
+          <div class="col-md-2">
+            <label class="center-block">Others
+            </label>
+          </div>
+          <div class="col-md-2 ">
+            <input type="radio" name="alcTobOthers" formControlName="alcTobOthers" value="yes">
+          </div>
+          <div class="col-md-2">
+            <input type="radio" name="alcTobOthers" formControlName="alcTobOthers" value="no">
+          </div>
+          <div class="col-md-3">
+            <input type="radio" name="alcTobOthers" formControlName="alcTobOthers" value="notToSay">
+          </div>
+        </div>
+        <!-- <div class="pt-30">
+          <div class="row">
+            <div class="col-md-2">
+              <input type="checkbox" name="test1" formControlName="test1" (change)="onTest1Change(accForm.value.test1)"/> Test 1
+             </div>
+            <div class="col-md-10">
+              <select class="form-control" formControlName="select1" id="select1" (change)="onSelect1Change(accForm.value.select1)">
+                <option value="option1">option1</option>
+                <option value="option2">option2</option>
+                <option value="option3">option3</option>
+                <option value="option4">option4</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label class="center-block">Input 1:
+                <input type="text" class="form-control" formControlName="input1">
+              </label>
+            </div>
+            <div class="col-md-4">
+              <label class="center-block">Input 2:
+                <input type="text" class="form-control w-100" formControlName="input2">
+              </label>
+            </div>
+            <div class="col-md-4">
+              <label class="center-block">Input 3:
+                <input type="email" class="form-control" formControlName="input3">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="pt-30">
+          <input type="checkbox" name="test2" formControlName="test2" /> 
+          Test 2 
+          <textarea class="form-control" name="textbox2" formControlName="textbox2" [hidden]="!accForm.value.test2"></textarea>
+        </div>
+        <div class="pt-30 pb-20">
+          <input type="radio" name="test3" formControlName="test3" value="yes"> Yes
+          <input type="radio" name="test3" formControlName="test3" value="no"> No
+          <div *ngIf="accForm.value.test3 == 'yes'" >
+            <textarea class="form-control" name="textbox3" formControlName="textbox3" placeholder="If yes, why?"></textarea>
+          </div>
+        </div> -->
+      <!-- </div> -->
+
+    </div>
+  </div>
+    <!-- <div class="container accForm-container mt-20">
+      <h5 class="accForm-title">Body Parts to be Checked</h5>
+      <div class="personal-info">
+        <div *ngFor="let bodypart of bodyparts">
+          <label class="center-block">
+            <input type="checkbox" [formControlName]="bodypart.code" [value]="bodypart.code">{{bodypart.name}}
+          </label>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div style="margin-bottom: 1em">
+      <button type="button" (click)="onNextClick()" [disabled]="accForm.pristine" class="btn btn-primary">Next</button> &nbsp;
+      <button type="reset" (click)="revert()" [disabled]="accForm.pristine" class="btn btn-primary">Revert</button>
+    </div> -->
+  </form>
+</section>

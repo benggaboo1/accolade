@@ -1,0 +1,689 @@
+<section>
+  <form [formGroup]="disabilitiesForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Disabilities
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+        <div class="row align-center">
+          <div class="col-md-3">
+            <label class="center-block">
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Right Knee
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Left Knee
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Comments
+            </label>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Crepitus
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="crepitusRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="crepitusRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="crepitusLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="crepitusLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="crepitusComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Tenderness
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="tendernessRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="tendernessRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+            <div class="mt-20" *ngIf="disabilitiesForm.value.tendernessRight == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">Location
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="tendernessLocRight" />
+              </div>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">Severity
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="tendernessSevRight" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="tendernessLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="tendernessLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+            <div class="mt-20" *ngIf="disabilitiesForm.value.tendernessLeft == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">Location
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="tendernessLocLeft" />
+              </div>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">Severity
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="tendernessSevLeft" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div *ngIf="disabilitiesForm.value.tendernessLeft != 'yes' && disabilitiesForm.value.tendernessRight != 'yes'">
+              <textarea type="text" class="form-control" formControlName="tendernessComment"></textarea>
+            </div>
+            <div class="mt-60" *ngIf="disabilitiesForm.value.tendernessLeft == 'yes' || disabilitiesForm.value.tendernessRight == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">&nbsp;
+                </label>
+              </div>
+              <textarea type="text" class="form-control" formControlName="tendernessLocComment"></textarea>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">&nbsp;
+                </label>
+              </div>
+              <textarea type="text" class="form-control" formControlName="tendernessSevComment"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Objective evidence of pain on weight-bearing
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="weightBearingRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="weightBearingRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="weightBearingLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="weightBearingLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="weightBearingComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Objective evidence of pain on non-weight-bearing
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="nonWeightBearingRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="nonWeightBearingRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="nonWeightBearingLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="nonWeightBearingLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="nonWeightBearingComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Swelling
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="swellingRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="swellingRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="swellingLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="swellingLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="swellingComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Atrophy
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="atrophyRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="atrophyRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+            <div class="mt-20" *ngIf="disabilitiesForm.value.atrophyRight == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">Location
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="atrophyLocRight" />
+              </div>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">Measurement
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="atrophyMeasRight" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="atrophyLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="atrophyLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+            <div class="mt-20" *ngIf="disabilitiesForm.value.atrophyLeft == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">Location
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="atrophyLocLeft" />
+              </div>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">Measurement
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="atrophyMeasLeft" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div *ngIf="disabilitiesForm.value.atrophyLeft != 'yes' && disabilitiesForm.value.atrophyRight != 'yes'">
+              <textarea type="text" class="form-control" formControlName="atrophyComment"></textarea>
+            </div>
+            <div class="mt-60" *ngIf="disabilitiesForm.value.atrophyLeft == 'yes' || disabilitiesForm.value.atrophyRight == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">&nbsp;
+                </label>
+              </div>
+              <textarea type="text" class="form-control" formControlName="atrophyLocComment"></textarea>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">&nbsp;
+                </label>
+              </div>
+              <textarea type="text" class="form-control" formControlName="atrophyMeasComment"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Deformity
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="deformityRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="deformityRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="deformityLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="deformityLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="deformityComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Gait
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="gaitRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="gaitRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="gaitLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="gaitLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="gaitComment"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Leg length discrepancy
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="legLengthRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="legLengthRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+            <div class="mt-20" *ngIf="disabilitiesForm.value.legLengthRight == 'yes'">
+              <div class="col-md-12 pt-10">
+                <label class="center-block">Measurement
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="legLengthMeasRight" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="legLengthLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="legLengthLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+            <div class="mt-20" *ngIf="disabilitiesForm.value.legLengthLeft == 'yes'">
+              <div class="col-md-12 pt-10">
+                <label class="center-block">Measurement
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="legLengthMeasLeft" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div *ngIf="disabilitiesForm.value.legLengthRight != 'yes' && disabilitiesForm.value.legLengthLeft != 'yes'">
+              <textarea type="text" class="form-control" formControlName="legLengthComment"></textarea>
+            </div>
+            <div class="mt-60 pt-10" *ngIf="disabilitiesForm.value.legLengthRight == 'yes' || disabilitiesForm.value.legLengthLeft == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">&nbsp;
+                </label>
+              </div>
+              <textarea type="text" class="form-control" formControlName="legLengthComment"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Scar
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="scarRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="scarRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+            <div class="mt-20" *ngIf="disabilitiesForm.value.scarRight == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">Location
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="scarLocRight" />
+              </div>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">Measurement
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="scarMeasRight" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12 middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="scarLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="scarLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+            <div class="mt-20" *ngIf="disabilitiesForm.value.scarLeft == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">Location
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="scarLocLeft" />
+              </div>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">Measurement
+                </label>
+              </div>
+              <div class="col-md-12">
+                <input type="text" class="form-control" formControlName="scarMeasLeft" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div *ngIf="disabilitiesForm.value.scarLeft != 'yes' && disabilitiesForm.value.scarRight != 'yes'">
+              <textarea type="text" class="form-control" formControlName="tendernessComment"></textarea>
+            </div>
+            <div class="mt-60" *ngIf="disabilitiesForm.value.scarLeft == 'yes' || disabilitiesForm.value.scarRight == 'yes'">
+              <div class="col-md-12">
+                <label class="center-block">&nbsp;
+                </label>
+              </div>
+              <textarea type="text" class="form-control" formControlName="scarLocComment"></textarea>
+              <div class="col-md-12 pt-10">
+                <label class="center-block">&nbsp;
+                </label>
+              </div>
+              <textarea type="text" class="form-control" formControlName="scarMeasComment"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Is the scar painful or unstable; have a total area equal to or greater than 39 square cm (6 square inches); or are located on the head, face or neck?
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="scarPainRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="scarPainRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" class="form-control" formControlName="scarPainLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" class="form-control" formControlName="scarPainLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="scarPainComment"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

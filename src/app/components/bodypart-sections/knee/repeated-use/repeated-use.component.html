@@ -1,0 +1,298 @@
+<section>
+  <form [formGroup]="repeatedUseForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Repeated Use Overtime
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+        <!-- <div class="rightKneeColumn"> &nbsp; </div>
+        <div class="leftKneeColumn"> &nbsp; </div> -->
+
+        <div class="row align-center">
+          <div class="col-md-6">
+            <label class="center-block">
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Right Knee
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Left Knee
+            </label>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label class="center-block">
+              Is the Veteran being examined immediately after repetitive use over time?
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="examinedImmediatelyRight" formControlName="examinedImmediatelyRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="examinedImmediatelyRight" formControlName="examinedImmediatelyRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="examinedImmediatelyRight" formControlName="examinedImmediatelyRight" value="na" />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="examinedImmediatelyLeft" formControlName="examinedImmediatelyLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="examinedImmediatelyLeft" formControlName="examinedImmediatelyLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="examinedImmediatelyLeft" formControlName="examinedImmediatelyLeft" value="na" />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label class="center-block">
+              If the examination is medically inconsistent with the Veteran's statements of functional loss, please explain:
+            </label>
+          </div>
+          <div class="col-md-3">
+            <textarea rows="5" type="text" class="form-control" formControlName="inconsistencyExplanationRight"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea rows="5" type="text" class="form-control" formControlName="inconsistencyExplanationLeft"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label class="center-block">
+              Does pain, weakness, fatigability or incoordination significantly limit functional ability with repeated use over a period
+              of time?
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="limitAbilityRight" formControlName="limitAbilityRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="limitAbilityRight" formControlName="limitAbilityRight" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="limitAbilityRight" formControlName="limitAbilityRight" value="na" />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="limitAbilityLeft" formControlName="limitAbilityLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="limitAbilityLeft" formControlName="limitAbilityLeft" value="no" />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="limitAbilityLeft" formControlName="limitAbilityLeft" value="na" />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label class="center-block">
+              If unable to say without mere speculation, please explain:
+            </label>
+          </div>
+          <div class="col-md-3">
+            <textarea rows="5" type="text" class="form-control" formControlName="unableToSayRight"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea rows="5" type="text" class="form-control" formControlName="unableToSayLeft"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label class="center-block">
+              Select all factors that cause this functional loss:
+            </label>
+          </div>
+          <div class="col-md-3 pl-30">
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="naRight" name="naRight" formControlName="naRight"> N/A
+              <label for="naRight"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="painRight" name="painRight" formControlName="painRight"> Pain
+              <label for="painRight"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="fatigueRight" name="fatigueRight" formControlName="fatigueRight"> Fatigue
+              <label for="fatigueRight"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="weaknessRight" name="weaknessRight" formControlName="weaknessRight"> Weakness
+              <label for="weaknessRight"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="lackEnduranceRight" name="lackEnduranceRight" formControlName="lackEnduranceRight"> Lack of Endurance
+              <label for="lackEnduranceRight"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="incoordinationRight" name="incoordinationRight" formControlName="incoordinationRight">Incoordination
+              <label for="incoordinationRight"></label>
+            </div>
+            <div class="row">
+              <div class="other-factors">
+                <input type="text" class="form-control " formControlName="other1NameRight" placeholder="Other/s">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 pl-30">
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="naLeft" name="naLeft" formControlName="naLeft"> N/A
+              <label for="naLeft"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="painLeft" name="painLeft" formControlName="painLeft"> Pain
+              <label for="painLeft"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="fatigueLeft" name="fatigueLeft" formControlName="fatigueLeft"> Fatigue
+              <label for="fatigueLeft"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="weaknessLeft" name="weaknessLeft" formControlName="weaknessLeft"> Weakness
+              <label for="weaknessLeft"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="lackEnduranceLeft" name="lackEnduranceLeft" formControlName="lackEnduranceLeft"> Lack of Endurance
+              <label for="lackEnduranceLeft"></label>
+            </div>
+            <div class="row round">
+              <input class="mr-3" type="checkbox" id="incoordinationLeft" name="incoordinationLeft" formControlName="incoordinationLeft">Incoordination
+              <label for="incoordinationLeft"></label>
+            </div>
+            <div class="row">
+              <div class="other-factors">
+                <input type="text" class="form-control" formControlName="other1NameLeft" placeholder="Other/s">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row align-center">
+          <div class="col-md-6">
+            <label class="center-block">
+              Are you able to describe in terms of Range of Motion?
+            </label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="describeRangeInMotionRight" formControlName="describeRangeInMotionRight" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+
+              <label>
+                <input type="radio" name="describeRangeInMotionRight" formControlName="describeRangeInMotionRight" value="no" />
+                <div class="no box">
+                  <span>No</span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="describeRangeInMotionLeft" formControlName="describeRangeInMotionLeft" value="yes" />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+
+              <label>
+                <input type="radio" name="describeRangeInMotionLeft" formControlName="describeRangeInMotionLeft" value="no" />
+                <div class="no box">
+                  <span>No</span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

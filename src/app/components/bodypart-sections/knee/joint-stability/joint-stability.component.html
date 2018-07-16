@@ -1,0 +1,181 @@
+<section>
+  <form [formGroup]="jointStabilityForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Joint Stability Tests
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+
+        <div class="row align-center">
+          <div class="col-md-3">
+            <label class="center-block">
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Right
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Left
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Remarks
+            </label>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">POSTERIOR INSTABILITY (POSTERIOR DRAWER TEST) -
+              <a href="#">click link to watch video demo</a>
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="posteriorRight" id="posteriorRight">
+              <option value="">Select Option</option>
+              <option value="na">N/A</option>
+              <option value="normal">normal</option>
+              <option value="1plus">1+ (0-5 mm)</option>
+              <option value="2plus">2+ (5-10 mm)</option>
+              <option value="3plus">3+ (10-15 mm)</option>
+              <option value="testUnable">unable to test</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="posteriorLeft" id="posteriorLeft">
+              <option value="">Select Option</option>
+              <option value="na">N/A</option>
+              <option value="normal">normal</option>
+              <option value="1plus">1+ (0-5 mm)</option>
+              <option value="2plus">2+ (5-10 mm)</option>
+              <option value="3plus">3+ (10-15 mm)</option>
+              <option value="testUnable">unable to test</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="posteriorRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">LACHMAN TEST (ANTERIOR INSTABILITY)
+              <a href="#">click link to watch video demo</a>
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="anteriorRight" id="anteriorRight">
+              <option value="">Select Option</option>
+              <option value="na">N/A</option>
+              <option value="normal">normal</option>
+              <option value="1plus">1+ (0-5 mm)</option>
+              <option value="2plus">2+ (5-10 mm)</option>
+              <option value="3plus">3+ (10-15 mm)</option>
+              <option value="testUnable">unable to test</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="anteriorLeft" id="anteriorLeft">
+              <option value="">Select Option</option>
+              <option value="na">N/A</option>
+              <option value="normal">normal</option>
+              <option value="1plus">1+ (0-5 mm)</option>
+              <option value="2plus">2+ (5-10 mm)</option>
+              <option value="3plus">3+ (10-15 mm)</option>
+              <option value="testUnable">unable to test</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="anteriorRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">MEDIAL INSTABILITY (VALGUS STRESS TEST FOR MCL INJURY) -
+              <a href="#">click link to watch video demo</a>
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="medialRight" id="medialRight">
+              <option value="">Select Option</option>
+              <option value="na">N/A</option>
+              <option value="normal">normal</option>
+              <option value="1plus">1+ (0-5 mm)</option>
+              <option value="2plus">2+ (5-10 mm)</option>
+              <option value="3plus">3+ (10-15 mm)</option>
+              <option value="testUnable">unable to test</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="medialLeft" id="medialLeft">
+              <option value="">Select Option</option>
+              <option value="na">N/A</option>
+              <option value="normal">normal</option>
+              <option value="1plus">1+ (0-5 mm)</option>
+              <option value="2plus">2+ (5-10 mm)</option>
+              <option value="3plus">3+ (10-15 mm)</option>
+              <option value="testUnable">unable to test</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="medialRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">LATERAL INSTABILITY (VARUS STRESS TEST FOR LCL INJURY) -
+              <a href="#">click link to watch video demo</a>
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="lateralRight" id="lateralRight">
+              <option value="">Select Option</option>
+              <option value="na">N/A</option>
+              <option value="normal">normal</option>
+              <option value="1plus">1+ (0-5 mm)</option>
+              <option value="2plus">2+ (5-10 mm)</option>
+              <option value="3plus">3+ (10-15 mm)</option>
+              <option value="testUnable">unable to test</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="lateralLeft" id="lateralLeft">
+              <option value="">Select Option</option>
+              <option value="na">N/A</option>
+              <option value="normal">normal</option>
+              <option value="1plus">1+ (0-5 mm)</option>
+              <option value="2plus">2+ (5-10 mm)</option>
+              <option value="3plus">3+ (10-15 mm)</option>
+              <option value="testUnable">unable to test</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="lateralRemarks"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

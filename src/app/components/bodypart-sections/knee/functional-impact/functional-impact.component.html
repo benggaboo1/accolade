@@ -1,0 +1,166 @@
+<section>
+  <form [formGroup]="funcImpactForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Functional Impact
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+
+        <div class="row align-center">
+          <div class="col-md-3">
+            <label class="center-block">Limitations
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Right
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Left
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">Remarks
+            </label>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">None
+            </label>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="noneRight"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="noneLeft"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="noneRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Repetitive movements  
+            </label>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="repMovementRight"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="repMovementLeft"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="repMovementRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Cross legs
+            </label>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="crossLegsRight"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="crossLegsLeft"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="crossLegsRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Prolonged weight-bearing
+            </label>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="weightBearingRight"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="weightBearingLeft"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="weightBearingRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Prolonged standing
+            </label>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="prolStandRight"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="prolStandLeft"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="prolStandRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label class="center-block">Prolonged sitting
+            </label>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="prolSitRight"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="prolSitLeft"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="prolSitRemarks"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">
+              <input type="text" class="form-control" formControlName="other1Name" />
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="other1Right"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="other1Left"></textarea>
+          </div>
+          <div class="col-md-3">
+            <textarea type="text" class="form-control" formControlName="other1Remarks"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

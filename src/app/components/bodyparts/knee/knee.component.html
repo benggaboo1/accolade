@@ -1,0 +1,124 @@
+<section>
+
+  <div class="columnify" contents>
+    <div class="table-column">
+      <!-- Table of Contents -->
+      <ul class="contents-table" contentsTable>
+        <li>
+          <a href="#medical-history" contentsLink pageScroll [pageScrollOffset]="80">Medical History</a>
+        </li>
+        <li>
+          <a href="#diagnostic-tests" contentsLink pageScroll [pageScrollOffset]="80">Diagnostic Test/s</a>
+        </li>
+        <li>
+          <a href="#surgical-procedure" contentsLink pageScroll [pageScrollOffset]="80">Surgical Procedure/s</a>
+        </li>
+        <li>
+          <a href="#assitive-directive" contentsLink pageScroll [pageScrollOffset]="80">Assistive Devices</a>
+        </li>
+        <li>
+          <a href="#initial-range" contentsLink pageScroll [pageScrollOffset]="80">Initial Range of Motion</a>
+        </li>
+        <li>
+          <a href="#joint-stability" contentsLink pageScroll [pageScrollOffset]="80">Joint Stability Tests</a>
+        </li>
+        <li>
+          <a href="#complications" contentsLink pageScroll [pageScrollOffset]="80">Disabilities</a>
+        </li>
+        <li>
+          <a href="#ankylosis" contentsLink pageScroll [pageScrollOffset]="80">Ankylosis</a>
+        </li>
+        <li>
+          <a href="#repeated-use" contentsLink pageScroll [pageScrollOffset]="80">Repeated Use Overtime</a>
+        </li>
+        <li>
+          <a href="#flare-ups" contentsLink pageScroll [pageScrollOffset]="80">Flare Ups</a>
+        </li>
+        <li>
+          <a href="#additional-factors" contentsLink pageScroll [pageScrollOffset]="80">Additional Factors</a>
+        </li>
+        <li>
+          <a href="#others" contentsLink pageScroll [pageScrollOffset]="80">Others</a>
+        </li>
+        <li>
+          <a href="#remaining-extremities" contentsLink pageScroll [pageScrollOffset]="80">Remaining Extremities</a>
+        </li>
+        <li>
+          <a href="#functional-impact" contentsLink pageScroll [pageScrollOffset]="80">Functional Impact</a>
+        </li>
+        <li>
+          <a href="#remarks" contentsLink pageScroll [pageScrollOffset]="80">Remarks</a>
+        </li>
+        <li>
+          <a href="#additional-questions" contentsLink pageScroll [pageScrollOffset]="80">Additional Questions</a>
+        </li>
+        <li>
+          <a href="#rationale" contentsLink pageScroll [pageScrollOffset]="80">Rationale</a>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <div class="row">
+
+
+      <!-- Body -->
+      <div class="col-md-12 knee-body framed" #container>
+        <app-veteran-info></app-veteran-info>
+        <div [contentsSection]="'medical-history'">
+          <app-medical-history></app-medical-history>
+        </div>
+        <div [contentsSection]="'diagnostic-tests'">
+          <app-diagnostic-tests></app-diagnostic-tests>
+        </div>
+
+        <div [contentsSection]="'surgical-procedure'">
+          <app-surgical-procedure></app-surgical-procedure>
+        </div>
+        <div [contentsSection]="'assitive-directive'">
+          <app-assitive-directive></app-assitive-directive>
+        </div>
+        <div [contentsSection]="'initial-range'">
+          <app-initial-range></app-initial-range>
+        </div>
+        <div [contentsSection]="'joint-stability'">
+          <app-joint-stability></app-joint-stability>
+        </div>
+        <div [contentsSection]="'complications'">
+          <app-complications></app-complications>
+        </div>
+        <div [contentsSection]="'ankylosis'">
+          <app-ankylosis></app-ankylosis>
+        </div>
+        <div [contentsSection]="'repeated-use'">
+          <app-repeated-use></app-repeated-use>
+        </div>
+        <div [contentsSection]="'flare-ups'">
+          <app-flare-ups></app-flare-ups>
+        </div>
+        <div [contentsSection]="'additional-factors'">
+          <app-additional-factors></app-additional-factors>
+        </div>
+        <div [contentsSection]="'others'">
+          <app-others></app-others>
+        </div>
+        <div [contentsSection]="'remaining-extremities'">
+          <app-remaining-extremities></app-remaining-extremities>
+        </div>
+        <div [contentsSection]="'functional-impact'">
+          <app-functional-impact></app-functional-impact>
+        </div>
+        <div [contentsSection]="'remarks'">
+          <app-remarks></app-remarks>
+        </div>
+        <div [contentsSection]="'additional-questions'">
+          <app-additional-questions></app-additional-questions>
+        </div>
+        <div style="margin-bottom: 380px" [contentsSection]="'rationale'">
+          <app-rationale></app-rationale>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
