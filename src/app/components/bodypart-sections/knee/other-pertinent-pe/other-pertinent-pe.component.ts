@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-
 @Component({
-  selector: 'app-remaining-extremities',
-  templateUrl: './remaining-extremities.component.html',
-  styleUrls: ['./remaining-extremities.component.scss']
+  selector: 'app-other-pertinent-pe',
+  templateUrl: './other-pertinent-pe.component.html',
+  styleUrls: ['./other-pertinent-pe.component.scss']
 })
-export class RemainingExtremitiesComponent implements OnInit {
+export class OtherPertinentPeComponent implements OnInit {
 
   toggleSection: boolean = true;
-  remainingExtForm: FormGroup;
+  otherPertinentPEForm: FormGroup;
 
   constructor( private _formBuilder: FormBuilder) { 
     this.createForm();
@@ -21,16 +20,14 @@ export class RemainingExtremitiesComponent implements OnInit {
   }
 
   createForm(){
-    this.remainingExtForm = this._formBuilder.group({
-      remainingExtSelect: '',
-      extremitiesSelect: '',
-      briefSummary: '',
+    this.otherPertinentPEForm = this._formBuilder.group({
+      other: '',
+      otherBriefSummary: ''
     });
   };
 
   hideShowSection(){
     this.toggleSection = !this.toggleSection;
   }
-
 
 }

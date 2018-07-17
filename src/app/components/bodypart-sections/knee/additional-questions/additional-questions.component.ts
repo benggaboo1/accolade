@@ -11,6 +11,8 @@ export class AdditionalQuestionsComponent implements OnInit {
 
   toggleSection: boolean = true;
   addQuestionsForm: FormGroup;
+  serviceConnectedDiagnoses: FormArray;
+  addtlDiagnoses: FormArray;;
 
   constructor( private _formBuilder: FormBuilder) { 
     this.createForm();
@@ -21,6 +23,8 @@ export class AdditionalQuestionsComponent implements OnInit {
 
   createForm(){
     this.addQuestionsForm = this._formBuilder.group({
+      serviceConnectedDiagnoses: this._formBuilder.array([ this.createServiceConnectedDiagnoses() ]),
+      addtlDiagnoses: this._formBuilder.array([ this.createAddtlDiagnoses() ]),
       establishedDiagnosis: '',
       diagnosis: '',
       establishedDiagnosisSelect: ''
@@ -31,5 +35,28 @@ export class AdditionalQuestionsComponent implements OnInit {
     this.toggleSection = !this.toggleSection;
   }
 
+  createServiceConnectedDiagnoses(): FormGroup {
+    return this._formBuilder.group({
+      serviceConnectedDiagnosis: '',
+    });
+  }
+
+  createAddtlDiagnoses(): FormGroup {
+    return this._formBuilder.group({
+      addtlDiagnosis: '',
+      addtlDiagnosisSelection:'',
+      addtlDiagnosisRationale: '',
+    });
+  }
+
+  addServiceConnectedDiagnoses(): void {
+    this.serviceConnectedDiagnoses = this.addQuestionsForm.get("serviceConnectedDiagnoses") as FormArray;
+    this.serviceConnectedDiagnoses.push(this.createServiceConnectedDiagnoses());
+  }
+
+  addAddtlDiagnoses(): void {
+    this.addtlDiagnoses = this.addQuestionsForm.get("addtlDiagnoses") as FormArray;
+    this.addtlDiagnoses.push(this.createAddtlDiagnoses());
+  }
 
 }

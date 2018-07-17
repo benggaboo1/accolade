@@ -8,6 +8,9 @@
           <a href="#medical-history" contentsLink pageScroll [pageScrollOffset]="80">Medical History</a>
         </li>
         <li>
+          <a href="#veteran-history" contentsLink pageScroll [pageScrollOffset]="80">Veteran History</a>
+        </li>
+        <li>
           <a href="#diagnostic-tests" contentsLink pageScroll [pageScrollOffset]="80">Diagnostic Test/s</a>
         </li>
         <li>
@@ -23,7 +26,7 @@
           <a href="#joint-stability" contentsLink pageScroll [pageScrollOffset]="80">Joint Stability Tests</a>
         </li>
         <li>
-          <a href="#complications" contentsLink pageScroll [pageScrollOffset]="80">Disabilities</a>
+          <a href="#other-physical-exam" contentsLink pageScroll [pageScrollOffset]="80">Other Physical Exam Findings</a>
         </li>
         <li>
           <a href="#ankylosis" contentsLink pageScroll [pageScrollOffset]="80">Ankylosis</a>
@@ -38,10 +41,10 @@
           <a href="#additional-factors" contentsLink pageScroll [pageScrollOffset]="80">Additional Factors</a>
         </li>
         <li>
-          <a href="#others" contentsLink pageScroll [pageScrollOffset]="80">Others</a>
+          <a href="#other-pertinent-pe" contentsLink pageScroll [pageScrollOffset]="80">Other Pertinent PE</a>
         </li>
         <li>
-          <a href="#remaining-extremities" contentsLink pageScroll [pageScrollOffset]="80">Remaining Extremities</a>
+          <a href="#remaining-effective-function" contentsLink pageScroll [pageScrollOffset]="80">Remaining Effective Function</a>
         </li>
         <li>
           <a href="#functional-impact" contentsLink pageScroll [pageScrollOffset]="80">Functional Impact</a>
@@ -58,21 +61,19 @@
       </ul>
     </div>
 
-
-
+    <!-- Body -->
     <div class="row">
-
-
-      <!-- Body -->
       <div class="col-md-12 knee-body framed" #container>
         <app-veteran-info></app-veteran-info>
         <div [contentsSection]="'medical-history'">
           <app-medical-history></app-medical-history>
         </div>
+        <div [contentsSection]="'veteran-history'">
+          <app-veteran-history></app-veteran-history>
+        </div>
         <div [contentsSection]="'diagnostic-tests'">
           <app-diagnostic-tests></app-diagnostic-tests>
         </div>
-
         <div [contentsSection]="'surgical-procedure'">
           <app-surgical-procedure></app-surgical-procedure>
         </div>
@@ -85,8 +86,8 @@
         <div [contentsSection]="'joint-stability'">
           <app-joint-stability></app-joint-stability>
         </div>
-        <div [contentsSection]="'complications'">
-          <app-complications></app-complications>
+        <div [contentsSection]="'other-physical-exam'">
+          <app-other-physical-exam></app-other-physical-exam>
         </div>
         <div [contentsSection]="'ankylosis'">
           <app-ankylosis></app-ankylosis>
@@ -100,11 +101,11 @@
         <div [contentsSection]="'additional-factors'">
           <app-additional-factors></app-additional-factors>
         </div>
-        <div [contentsSection]="'others'">
-          <app-others></app-others>
+        <div [contentsSection]="'other-pertinent-pe'">
+          <app-other-pertinent-pe></app-other-pertinent-pe>
         </div>
-        <div [contentsSection]="'remaining-extremities'">
-          <app-remaining-extremities></app-remaining-extremities>
+        <div [contentsSection]="'remaining-effective-function'">
+          <app-remaining-effective-function></app-remaining-effective-function>
         </div>
         <div [contentsSection]="'functional-impact'">
           <app-functional-impact></app-functional-impact>

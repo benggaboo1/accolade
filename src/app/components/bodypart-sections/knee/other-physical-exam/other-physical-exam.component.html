@@ -1,10 +1,10 @@
 <section>
-  <form [formGroup]="disabilitiesForm" novalidate>
+  <form [formGroup]="otherPhysicalExamForm" novalidate>
     <div class="container accForm-container">
       <div class="accForm-title" (click)="hideShowSection()">
         <div class="row">
           <div class="col-md-11">
-            Disabilities
+            Other Physical Exam Findings
           </div>
           <div class="col-md-1 align-right">
             <i class="material-icons vertical-align">
@@ -100,7 +100,7 @@
                 </div>
               </label>
             </div>
-            <div class="mt-20" *ngIf="disabilitiesForm.value.tendernessRight == 'yes'">
+            <div class="mt-20" *ngIf="otherPhysicalExamForm.value.tendernessRight == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">Location
                 </label>
@@ -132,7 +132,7 @@
                 </div>
               </label>
             </div>
-            <div class="mt-20" *ngIf="disabilitiesForm.value.tendernessLeft == 'yes'">
+            <div class="mt-20" *ngIf="otherPhysicalExamForm.value.tendernessLeft == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">Location
                 </label>
@@ -150,10 +150,10 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div *ngIf="disabilitiesForm.value.tendernessLeft != 'yes' && disabilitiesForm.value.tendernessRight != 'yes'">
+            <div *ngIf="otherPhysicalExamForm.value.tendernessLeft != 'yes' && otherPhysicalExamForm.value.tendernessRight != 'yes'">
               <textarea type="text" class="form-control" formControlName="tendernessComment"></textarea>
             </div>
-            <div class="mt-60" *ngIf="disabilitiesForm.value.tendernessLeft == 'yes' || disabilitiesForm.value.tendernessRight == 'yes'">
+            <div class="mt-60" *ngIf="otherPhysicalExamForm.value.tendernessLeft == 'yes' || otherPhysicalExamForm.value.tendernessRight == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">&nbsp;
                 </label>
@@ -322,7 +322,7 @@
                 </div>
               </label>
             </div>
-            <div class="mt-20" *ngIf="disabilitiesForm.value.atrophyRight == 'yes'">
+            <div class="mt-20" *ngIf="otherPhysicalExamForm.value.atrophyRight == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">Location
                 </label>
@@ -354,7 +354,7 @@
                 </div>
               </label>
             </div>
-            <div class="mt-20" *ngIf="disabilitiesForm.value.atrophyLeft == 'yes'">
+            <div class="mt-20" *ngIf="otherPhysicalExamForm.value.atrophyLeft == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">Location
                 </label>
@@ -372,10 +372,10 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div *ngIf="disabilitiesForm.value.atrophyLeft != 'yes' && disabilitiesForm.value.atrophyRight != 'yes'">
+            <div *ngIf="otherPhysicalExamForm.value.atrophyLeft != 'yes' && otherPhysicalExamForm.value.atrophyRight != 'yes'">
               <textarea type="text" class="form-control" formControlName="atrophyComment"></textarea>
             </div>
-            <div class="mt-60" *ngIf="disabilitiesForm.value.atrophyLeft == 'yes' || disabilitiesForm.value.atrophyRight == 'yes'">
+            <div class="mt-60" *ngIf="otherPhysicalExamForm.value.atrophyLeft == 'yes' || otherPhysicalExamForm.value.atrophyRight == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">&nbsp;
                 </label>
@@ -500,7 +500,7 @@
                 </div>
               </label>
             </div>
-            <div class="mt-20" *ngIf="disabilitiesForm.value.legLengthRight == 'yes'">
+            <div class="mt-20" *ngIf="otherPhysicalExamForm.value.legLengthRight == 'yes'">
               <div class="col-md-12 pt-10">
                 <label class="center-block">Measurement
                 </label>
@@ -525,7 +525,7 @@
                 </div>
               </label>
             </div>
-            <div class="mt-20" *ngIf="disabilitiesForm.value.legLengthLeft == 'yes'">
+            <div class="mt-20" *ngIf="otherPhysicalExamForm.value.legLengthLeft == 'yes'">
               <div class="col-md-12 pt-10">
                 <label class="center-block">Measurement
                 </label>
@@ -536,10 +536,10 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div *ngIf="disabilitiesForm.value.legLengthRight != 'yes' && disabilitiesForm.value.legLengthLeft != 'yes'">
+            <div *ngIf="otherPhysicalExamForm.value.legLengthRight != 'yes' && otherPhysicalExamForm.value.legLengthLeft != 'yes'">
               <textarea type="text" class="form-control" formControlName="legLengthComment"></textarea>
             </div>
-            <div class="mt-60 pt-10" *ngIf="disabilitiesForm.value.legLengthRight == 'yes' || disabilitiesForm.value.legLengthLeft == 'yes'">
+            <div class="mt-60 pt-10" *ngIf="otherPhysicalExamForm.value.legLengthRight == 'yes' || otherPhysicalExamForm.value.legLengthLeft == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">&nbsp;
                 </label>
@@ -571,7 +571,7 @@
                 </div>
               </label>
             </div>
-            <div class="mt-20" *ngIf="disabilitiesForm.value.scarRight == 'yes'">
+            <div class="mt-20" *ngIf="otherPhysicalExamForm.value.scarRight == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">Location
                 </label>
@@ -603,7 +603,7 @@
                 </div>
               </label>
             </div>
-            <div class="mt-20" *ngIf="disabilitiesForm.value.scarLeft == 'yes'">
+            <div class="mt-20" *ngIf="otherPhysicalExamForm.value.scarLeft == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">Location
                 </label>
@@ -621,10 +621,10 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div *ngIf="disabilitiesForm.value.scarLeft != 'yes' && disabilitiesForm.value.scarRight != 'yes'">
+            <div *ngIf="otherPhysicalExamForm.value.scarLeft != 'yes' && otherPhysicalExamForm.value.scarRight != 'yes'">
               <textarea type="text" class="form-control" formControlName="tendernessComment"></textarea>
             </div>
-            <div class="mt-60" *ngIf="disabilitiesForm.value.scarLeft == 'yes' || disabilitiesForm.value.scarRight == 'yes'">
+            <div class="mt-60" *ngIf="otherPhysicalExamForm.value.scarLeft == 'yes' || otherPhysicalExamForm.value.scarRight == 'yes'">
               <div class="col-md-12">
                 <label class="center-block">&nbsp;
                 </label>
@@ -643,19 +643,20 @@
 
         <div class="row">
           <div class="col-md-3">
-            <label class="center-block">Is the scar painful or unstable; have a total area equal to or greater than 39 square cm (6 square inches); or are located on the head, face or neck?
+            <label class="center-block">Is the scar painful or unstable; have a total area equal to or greater than 39 square cm (6 square inches); or
+              are located on the head, face or neck?
             </label>
           </div>
           <div class="col-md-3">
             <div class="middle">
               <label>
-                <input type="radio" class="form-control" formControlName="scarPainRight" value="yes" />
+                <input type="radio" class="form-control" formControlName="scarPainRight" value="yes" (change)="onScarRadioChange(otherPhysicalExamForm.value.scarPainRight, otherPhysicalExamForm.value.scarPainLeft)"/>
                 <div class="box yes">
                   <span>Yes</span>
                 </div>
               </label>
               <label>
-                <input type="radio" class="form-control" formControlName="scarPainRight" value="no" />
+                <input type="radio" class="form-control" formControlName="scarPainRight" value="no" (change)="onScarRadioChange(otherPhysicalExamForm.value.scarPainRight, otherPhysicalExamForm.value.scarPainLeft)"/>
                 <div class="box no">
                   <span>No</span>
                 </div>
@@ -665,13 +666,13 @@
           <div class="col-md-3">
             <div class="middle">
               <label>
-                <input type="radio" class="form-control" formControlName="scarPainLeft" value="yes" />
+                <input type="radio" class="form-control" formControlName="scarPainLeft" value="yes" (change)="onScarRadioChange(otherPhysicalExamForm.value.scarPainRight, otherPhysicalExamForm.value.scarPainLeft)"/>
                 <div class="box yes">
                   <span>Yes</span>
                 </div>
               </label>
               <label>
-                <input type="radio" class="form-control" formControlName="scarPainLeft" value="no" />
+                <input type="radio" class="form-control" formControlName="scarPainLeft" value="no" (change)="onScarRadioChange(otherPhysicalExamForm.value.scarPainRight, otherPhysicalExamForm.value.scarPainLeft)"/>
                 <div class="box no">
                   <span>No</span>
                 </div>
@@ -686,4 +687,39 @@
       </div>
     </div>
   </form>
+
+  <!-- Add SCAR MODAL -->
+  <div bsModal #addScarModal="bs-modal" id="addScarModal" class="modal fade center" tabindex="-1" role="dialog" aria-labelledby="addScarModalLabel"
+    aria-hidden="true" [config]="{backdrop:'static'}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title text-left padding-20-b">Add Scar DBQ</h6>
+          <br>
+          <button type="button" class="close pull-right cursor-pointer" aria-label="Close" (click)="resetAndClose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid padding-15-b">
+            <div>
+              <label class="center-block">Scar DBQ will be added.
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary btn-sm cursor-pointer" (click)="addAnkleModalToDbqArray()">
+            Continue
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-sm cursor-pointer" (click)="resetAndClose()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </section>

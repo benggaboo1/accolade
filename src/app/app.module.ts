@@ -18,6 +18,9 @@ import { ContentsModule } from 'angular-contents';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { VeteransMasterListComponent } from './components/veterans-master-list/veterans-master-list.component';
 
+import { FilterPipe } from './util/filter.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { VeteransMasterListComponent } from './components/veterans-master-list/v
     LogInComponent, 
     routedComponents,
     GeneralComponent,
-    VeteransMasterListComponent
+    VeteransMasterListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

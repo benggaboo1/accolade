@@ -18,9 +18,9 @@ const appRoutes: Routes = [
                 path: 'reports', component: ReportsComponent,
                 children: [
                     { path: '', component: GeneralComponent},
-                    { path: 'general', component: GeneralComponent},
-                    { path: 'ankle', component: AnkleComponent },
-                    { path: 'knee', component: KneeComponent },
+                    { path: 'GEN', component: GeneralComponent},
+                    { path: 'ANK', component: AnkleComponent },
+                    { path: 'KNE', component: KneeComponent },
                 ]
             },
         ]
