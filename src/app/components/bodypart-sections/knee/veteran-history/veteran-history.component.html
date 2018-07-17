@@ -1,0 +1,368 @@
+<section>
+  <form [formGroup]="vetHistoryForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Does the veteran have a history of any of the following conditions?
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="medical-history form-group" *ngIf="toggleSection">
+
+        <div class="row align-center">
+          <div class="col-md-4">
+            <label class="center-block">
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="center-block">
+            </label>
+          </div>
+          <div class="col-md-5">
+            <label class="center-block">Details, date of records, page#
+            </label>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Recurrent subluxation (partial dislocation)
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasRecSubluxation" id="hasRecSubluxation">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="recSubluxationDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Lateral instability</label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasLatInstability" id="hasLatInstability">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="latInstabilityDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Recurrent effusion
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasRecEffusion" id="hasRecEffusion">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="recEffusionDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Recurrent patellar dislocation
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasRecPatellar" id="hasRecPatellar">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="recPatellarDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">“Shin splints” (medial tibial stress syndrome)</label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasShinSplints" id="hasShinSplints">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="shinSplintsDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">If the answer to the previous question is yes, do the shin splints affect the ankle ROM?</label>
+          </div>
+          <div class="col-md-3">
+            <div class="middle">
+              <label>
+                <input type="radio" name="affectAnkleROM" formControlName="affectAnkleROM" value="yes" (change)="onSelectionChange(vetHistoryForm.value.affectAnkleROM)"
+                />
+                <div class="box yes">
+                  <span>Yes</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="affectAnkleROM" formControlName="affectAnkleROM" value="no" (change)="onSelectionChange(vetHistoryForm.value.affectAnkleROM)"
+                />
+                <div class="box no">
+                  <span>No</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="affectAnkleROM" formControlName="affectAnkleROM" value="na" (change)="onSelectionChange(vetHistoryForm.value.affectAnkleROM)"
+                />
+                <div class="box na">
+                  <span>N/A</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="affectAnkleROMDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Stress fracture of the lower leg
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasStressFract" id="hasStressFract">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="stressFractDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Chronic exertional compartment syndrome
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasChronicExertional" id="hasChronicExertional">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="chronicExertionalDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Acquired and/or traumatic genu recurvatum with objectively demonstrated weakness and insecurity in weight-bearing
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasGenuRecurvatum" id="hasGenuRecurvatum">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="genuRecurvatumDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Meniscal dislocation
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasMeniscalDisc" id="hasMeniscalDisc">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="meniscalDiscDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block">Meniscal tear
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasMeniscalTear" id="hasMeniscalTear">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="meniscalTearDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block"> Frequent episodes of joint “locking”
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasFreqJointLocking" id="hasFreqJointLocking">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="freqJointLockingDetails"></textarea>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label class="center-block"> Frequent episodes of joint pain
+            </label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" formControlName="hasFreqJointPain" id="hasFreqJointPain">
+              <option value="">Select Option</option>
+              <option value="yesRight">Yes - right only</option>
+              <option value="yesLeft">Yes - left only</option>
+              <option value="yesBi">Yes - bilateral</option>
+              <option value="no">No</option>
+              <option value="na">N/A</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <textarea type="text" class="form-control" formControlName="freqJointPainDetails"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+  <!-- Add ANKLE MODAL -->
+  <div bsModal #addAnkleModal="bs-modal" id="addAnkleModal" class="modal fade center" tabindex="-1" role="dialog" aria-labelledby="addAnkleModalLabel"
+    aria-hidden="true" [config]="{backdrop:'static'}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title text-left padding-20-b">Add Ankle DBQ</h6>
+          <br>
+          <button type="button" class="close pull-right cursor-pointer" aria-label="Close" (click)="resetAndClose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid padding-15-b">
+            <div>
+              <label class="center-block">Shin splints affect the ankle ROM, Ankle DBQ will be added.
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary btn-sm cursor-pointer" (click)="addAnkleModalToDbqArray()">
+            Continue
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-sm cursor-pointer" (click)="resetAndClose()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

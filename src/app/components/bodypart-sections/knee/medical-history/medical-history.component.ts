@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-medical-history',
@@ -13,12 +12,19 @@ export class MedicalHistoryComponent implements OnInit {
   medHistoryForm: FormGroup;
   finalDiagnoses: FormArray;
   diagnoses: FormArray;
+  finalDiagnosesTest: any[]=[];
+  finalDiagnosis: String;
 
   constructor( private _formBuilder: FormBuilder) { 
     this.createForm();
   }
 
   ngOnInit() {
+    this.finalDiagnosis = "Final Diagnosis 1"
+    this.finalDiagnosesTest.push(this.finalDiagnosis);
+    this.finalDiagnosesTest.push("Final Diagnosis 2");
+    this.finalDiagnosesTest.push("Final Diagnosis 3");
+
   }
 
   createForm(){

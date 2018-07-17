@@ -517,7 +517,7 @@
     width: 100%;
     text-align: left;
     color: white;
-    font-size:16px;
+    font-size:15px;
     font-weight: 400;
     background-color: #366092;
     padding: 7px 15px;
@@ -577,15 +577,12 @@ body{
     padding: 15px 20px;
     box-shadow: 0 3px 4px 2px rgba(0, 1, 2, 0.15)
 }
-data
+
 
 /* CONTENTS */
 .contents-table {
-  line-height: 1;
   position: absolute; 
-  padding: 15px;
 }
-
 .contents-table.sticky {
   position: fixed; 
   top: 80px; 
@@ -597,9 +594,16 @@ data
 }
 
 .contents-table {
+  position: absolute; 
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1;
   list-style: none;
-  // margin: 0;
-  margin-top: 20px !important;
+  margin-left: 10px !important;
+
+  a{
+    margin-bottom: 5px;
+  }
 }
 
 .contents-table a {
@@ -618,6 +622,7 @@ data
 .columnify > .table-column {
   flex: 0 1 auto;
   width: 220px;
+
 }
 
 .columnify {
@@ -629,18 +634,18 @@ data
 }
 
 .columnify > *:not(:first-child) {
-  margin-left: 2rem;
+  margin-left: 10px;
 }
 
 .medical-history{
   padding: 20px;
     padding-bottom: 30px;
   background-color: #c4d8f1;
-  font-size: 14px;
+  font-size: 13px;
 } 
 
 .medical-history .form-control{
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1;
   border: 1px solid #9b9c9c17;
   box-shadow: 0 1px 1px 0px #233b7245;
@@ -654,19 +659,11 @@ data
 .add-others{
   background-color: #1c5296  !important;
   border: transparent;
-  font-size: 13px;
+  font-size: 12px;
 }
-/* 
-.framed {
-  position: relative;
-height: 500px;
-  overflow-y: auto;
-  border-radius: 2px;
-} */
 
 .iput-group{
   box-shadow: 0 1px 1px 0px #233b7245;
-
 }
 
 
@@ -730,10 +727,10 @@ $blue: #366092;
     span {
       transform: translate(0, 60px);
       transition: all 300ms ease;
-      font-size: 14px;
+      font-size: 13px;
       user-select: none;
       &:before {
-        font-size: 14px;
+        font-size: 13px;
         display: block;
         transform: translateY(-80px);
         opacity: 0;
@@ -753,7 +750,7 @@ input[type=date] {
     margin: 0; 
   }
   &::-webkit-calendar-picker-indicator {
-    font-size: 13px;
+    font-size: 12px;
     // padding: 0px;
     cursor: pointer;
   }
@@ -761,4 +758,34 @@ input[type=date] {
 
 select{
   cursor: pointer;
+}
+
+.nav-link{
+  padding-right: 10px;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  min-width: 400px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

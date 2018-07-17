@@ -13,7 +13,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 })
 export class GeneralComponent implements OnInit {
     
-  isNext = false;
   accForm: FormGroup;
   bodyparts = bodyparts;
   isShowSection: boolean = true;
@@ -63,11 +62,6 @@ export class GeneralComponent implements OnInit {
     });
   };
 
-  onNextClick() {
-    if (this.accForm.value.shoulder == true){
-      this.isNext = true;
-    }
-  }
 
   onTest1Change(value){
     this.accForm.controls['select1'].reset();

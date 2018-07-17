@@ -4,9 +4,15 @@
       <div class="col-md-12">
         <ul class="nav nav-tabs ">
           <li class="nav-item nav-forms" *ngFor="let chosenForm of chosenForms" [routerLinkActive]="['active']">
-            <a class="nav-link" [routerLink]="[chosenForm.code]">{{chosenForm.label}}</a>
+            <a class="nav-link" [routerLink]="[chosenForm.code]">{{chosenForm.label}}
+              <i class="material-icons" *ngIf="chosenForm.code != 'GEN'">
+                close
+              </i>
+            </a>
+
           </li>
-          <li class="add-form" (click)="addForm()">
+          <!-- <li class="add-form" (click)="addForm()"> -->
+          <li class="add-form">
             <i class="material-icons ">
               add_box
             </i>
@@ -19,7 +25,7 @@
     </div>
   </div>
 
-  <!-- CONTACT US MODAL -->
+  Add DBQs MODAL
   <div bsModal #addFormModal="bs-modal" id="addFormModal" class="modal fade center " tabindex="-1" role="dialog" aria-labelledby="addFormModalLabel"
     aria-hidden="true" [config]="{backdrop:'static'}">
     <div class="modal-dialog">
@@ -33,7 +39,44 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid padding-15-b">
-            
+            <div>
+
+              <!-- Selected Games-->
+              <div class="selected-games-wrap">
+                <div class="selected-game" *ngFor="let s of selected_games">
+                  <span>{{s.name}}
+                    <span class="delete-game" (click)="deleteGame(s.id)" title="Click to delete">X</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Search Field -->
+              <div>
+                <div class="filter-wrap">
+                  <input [(ngModel)]="searchText" placeholder="Filter Games" class="filter-input">
+                  <span class="filter-clear" *ngIf="searchText.length>0" (click)="clearFilter()">X</span>
+                </div>
+              </div>
+              <!-- Clear Link-->
+              <div class="clear-selection" title="Click to Clear Selections" (click)="clearSelection()" *ngIf="selected_count">Clear Selection</div>
+
+              <!-- Game List -->
+              <ul class="game-list">
+                <div class="row">
+                  <div class="col-md-4 game-item" *ngFor="let g of games | filter : searchText">
+                    <span class="game-text">
+                      <button type="button" class="btn btn-primary active" (click)="selectItem(g.selected, $event)">
+                        <i class="state-icon glyphicon glyphicon-check"></i>
+                        {{g.name}}
+                      </button>
+                      <input (change)="getSelected()" type="checkbox" class="hidden" name="games" value="{{g.id}}" [(ngModel)]="g.selected" />
+                    </span>
+                  </div>
+                </div>
+
+              </ul>
+
+            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -46,5 +89,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 </section>

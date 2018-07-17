@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ModalDirective, ModalOptions } from 'ngx-bootstrap/modal';
 
 @Component({
-  selector: 'app-complications',
-  templateUrl: './complications.component.html',
-  styleUrls: ['./complications.component.scss']
+  selector: 'app-other-physical-exam',
+  templateUrl: './other-physical-exam.component.html',
+  styleUrls: ['./other-physical-exam.component.scss']
 })
-export class ComplicationsComponent implements OnInit {
+export class OtherPhysicalExamComponent implements OnInit {
+  @ViewChild('addScarModal') private addScarModal: ModalDirective;
 
   toggleSection: boolean = true;
-  disabilitiesForm: FormGroup;
+  otherPhysicalExamForm: FormGroup;
 
   constructor( private _formBuilder: FormBuilder) { 
     this.createForm();
@@ -20,7 +21,7 @@ export class ComplicationsComponent implements OnInit {
   }
 
   createForm(){
-    this.disabilitiesForm = this._formBuilder.group({
+    this.otherPhysicalExamForm = this._formBuilder.group({
       crepitusRight: '', crepitusLeft: '', crepitusComment:'',
       tendernessRight: '', tendernessLeft: '', tendernessComment: '',
       tendernessLocRight: '', tendernessSevRight: '',
@@ -48,5 +49,23 @@ export class ComplicationsComponent implements OnInit {
   hideShowSection(){
     this.toggleSection = !this.toggleSection;
   }
+
+  showAddScarModal(){
+    this.addScarModal.show();
+  }
+
+  resetAndClose(){
+    this.addScarModal.hide();
+    this.otherPhysicalExamForm.controls['scarPainRight'].setValue('no');
+    this.otherPhysicalExamForm.controls['scarPainLeft'].setValue('no');
+  }
+
+  onScarRadioChange(right, left){
+    if(right == 'yes' || left == "yes"){
+      this.showAddScarModal();
+    }
+  }
+
+
 
 }

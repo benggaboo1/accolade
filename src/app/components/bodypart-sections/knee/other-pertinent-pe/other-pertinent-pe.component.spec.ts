@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OthersComponent } from './others.component';
+import { OtherPertinentPeComponent } from './other-pertinent-pe.component';
 
-describe('OthersComponent', () => {
-  let component: OthersComponent;
-  let fixture: ComponentFixture<OthersComponent>;
+describe('OtherPertinentPeComponent', () => {
+  let component: OtherPertinentPeComponent;
+  let fixture: ComponentFixture<OtherPertinentPeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OthersComponent ]
+      declarations: [ OtherPertinentPeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OthersComponent);
+    fixture = TestBed.createComponent(OtherPertinentPeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

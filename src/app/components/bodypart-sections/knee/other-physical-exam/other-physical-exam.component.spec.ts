@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HistoryComponent } from './history.component';
+import { OtherPhysicalExamComponent } from './other-physical-exam.component';
 
-describe('HistoryComponent', () => {
-  let component: HistoryComponent;
-  let fixture: ComponentFixture<HistoryComponent>;
+describe('OtherPhysicalExamComponent', () => {
+  let component: OtherPhysicalExamComponent;
+  let fixture: ComponentFixture<OtherPhysicalExamComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HistoryComponent ]
+      declarations: [ OtherPhysicalExamComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HistoryComponent);
+    fixture = TestBed.createComponent(OtherPhysicalExamComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
