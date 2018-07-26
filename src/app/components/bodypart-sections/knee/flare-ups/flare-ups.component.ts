@@ -34,6 +34,16 @@ export class FlareUpsComponent implements OnInit {
       other1Right: '', other1Left: '',
       other1NameRight: '', other1NameLeft: '', 
       describeRangeInMotionRight: '', describeRangeInMotionLeft: '', 
+      isFunctionalLossPresent: false,
+      isROMLossMinimal: false,
+      isPainIncrease: false, 
+      isPainWeakneesInstability: false,
+      painWeakneesInstabilityAbility: new FormControl({ value: '', disabled: true }),
+      isDependOnTypeOfMovement: '', dependOnTypeOfMovementExmpl: new FormControl({ value: '', disabled: true }),
+      isDependOnLevelOfActivity: '', dependOnLevelOfActivityExmpl: new FormControl({ value: '', disabled: true }),
+      isUnableToDoSelfCare: '', selfCareActivities: new FormControl({ value: '', disabled: true }),
+      isNotFeasible: '', experiencesIncreased: new FormControl({ value: '', disabled: true }),
+      isUnableToSay: '', unableToSayExpl: new FormControl({ value: '', disabled: true }),
     });
   };
 
@@ -41,5 +51,22 @@ export class FlareUpsComponent implements OnInit {
     this.toggleSection = !this.toggleSection;
   }
 
+  showRangeOfMotionDescription(){
+    let rightROM = this.flareUpsForm.get('describeRangeInMotionRight').value;
+    let leftROM = this.flareUpsForm.get('describeRangeInMotionLeft').value;
+
+    if(rightROM == 'no' || leftROM == 'no'){
+      return true;
+    }
+  }
+
+  disableToggle(checkbox:string, textarea: string){
+    if(this.flareUpsForm.get(checkbox).value == true){
+      this.flareUpsForm.controls[textarea].enable();
+    }else{
+      this.flareUpsForm.controls[textarea].disable();
+      this.flareUpsForm.controls[textarea].setValue("");
+    }
+  }
 
 }

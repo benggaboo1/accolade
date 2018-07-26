@@ -19,13 +19,13 @@ import { OtherPhysicalExamComponent } from '../../components/bodypart-sections/k
 import { RationaleComponent } from '../../components/bodypart-sections/knee/rationale/rationale.component';
 import { RemainingEffectiveFunctionComponent } from '../../components/bodypart-sections/knee/remaining-effective-function/remaining-effective-function.component';
 import { RemarksComponent } from '../../components/bodypart-sections/knee/remarks/remarks.component';
+import { RepetitiveTestingComponent } from '../../components/bodypart-sections/knee/repetitive-testing/repetitive-testing.component';
 import { RepeatedUseComponent } from '../../components/bodypart-sections/knee/repeated-use/repeated-use.component';
 import { SurgicalProcedureComponent } from '../../components/bodypart-sections/knee/surgical-procedure/surgical-procedure.component';
 import { ContentsModule } from 'angular-contents';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { VeteranInfoComponent } from '../../components/veteran-info/veteran-info.component';
 import { VeteranHistoryComponent } from '../../components/bodypart-sections/knee/veteran-history/veteran-history.component';
-
 
 
 @NgModule({
@@ -55,6 +55,7 @@ import { VeteranHistoryComponent } from '../../components/bodypart-sections/knee
     RationaleComponent,
     RemainingEffectiveFunctionComponent,
     RemarksComponent,
+    RepetitiveTestingComponent,
     RepeatedUseComponent,
     SurgicalProcedureComponent,
     VeteranHistoryComponent

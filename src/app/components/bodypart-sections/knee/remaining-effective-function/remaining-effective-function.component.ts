@@ -21,7 +21,7 @@ export class RemainingEffectiveFunctionComponent implements OnInit {
 
   createForm(){
     this.remainingEffFuncForm = this._formBuilder.group({
-      remainingExtSelect: 'no',
+      remainingExtSelect: '',
       extremitiesSelect: '',
       briefSummary: '',
     });
@@ -38,7 +38,6 @@ export class RemainingEffectiveFunctionComponent implements OnInit {
       this.remainingEffFuncForm.controls['extremitiesSelect'].disable();
       this.remainingEffFuncForm.controls['extremitiesSelect'].setValue("");
     }
-    
   }
 
 

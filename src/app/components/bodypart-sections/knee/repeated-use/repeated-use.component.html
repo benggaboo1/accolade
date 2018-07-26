@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="medical-history form-group" *ngIf="toggleSection">
+      <div class="section-container form-group" *ngIf="toggleSection">
         <!-- <div class="rightKneeColumn"> &nbsp; </div>
         <div class="leftKneeColumn"> &nbsp; </div> -->
 
@@ -291,7 +291,172 @@
           </div>
         </div>
 
+        <div *ngIf="showRangeOfMotionDescription()">
+          <hr>
+
+          <div class="row">
+            <div class="col-md-12">
+              <label class="center-block">
+                If no is the answer to the previous question, please choose from the following options and provide examples, as appropriate:
+              </label>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isFunctionalLossPresent" name="isFunctionalLossPresent" formControlName="isFunctionalLossPresent">
+              <label for="isFunctionalLossPresent"></label>
+            </div>
+            <div class="col-md-11">
+              <label class="center-block">
+                Loss of ROM not anticipated, however, functional loss is present due to pain.
+              </label>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isROMLossMinimal" name="isROMLossMinimal" formControlName="isROMLossMinimal">
+              <label for="isROMLossMinimal"></label>
+            </div>
+            <div class="col-md-11">
+              <label class="center-block">
+                The veteran reports after repeated use, the loss of ROM is variable, depending on how strenuously the joint was used. At
+                its worst, the veteran cannot move it at all due to pain but there are other times where the ROM loss is
+                minimal.
+              </label>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isPainIncrease" name="isPainIncrease" formControlName="isPainIncrease">
+              <label for="isPainIncrease"></label>
+            </div>
+            <div class="col-md-11">
+              <label class="center-block">
+                The veteran reports there is no loss in ROM after repeated use, however, the veteran does report an increase in pain.
+              </label>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isPainWeakneesInstability" name="isPainWeakneesInstability" formControlName="isPainWeakneesInstability"
+                (change)="disableToggle('isPainWeakneesInstability','painWeakneesInstabilityAbility')">
+              <label for="isPainWeakneesInstability"></label>
+            </div>
+            <div class="col-md-6">
+              <label class="center-block">
+                Pain/ weakness / instability may cause a further decrease in ROM with repetitive use, significantly affecting his ability
+                to
+              </label>
+            </div>
+            <div class="col-md-5">
+              <textarea type="text" class="form-control" formControlName="painWeakneesInstabilityAbility"></textarea>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isDependOnTypeOfMovement" name="isDependOnTypeOfMovement" formControlName="isDependOnTypeOfMovement"
+                (change)="disableToggle('isDependOnTypeOfMovement','dependOnTypeOfMovementExmpl')">
+              <label for="isDependOnTypeOfMovement"></label>
+            </div>
+            <div class="col-md-6">
+              <label class="center-block">
+                The veteran reports after repetitive use, the loss of ROM is variable, depending on the type of movement. Provide Examples:</label>
+            </div>
+            <div class="col-md-5">
+              <textarea type="text" class="form-control" formControlName="dependOnTypeOfMovementExmpl"></textarea>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isDependOnLevelOfActivity" name="isDependOnLevelOfActivity" formControlName="isDependOnLevelOfActivity"
+                (change)="disableToggle('isDependOnLevelOfActivity','dependOnLevelOfActivityExmpl')">
+              <label for="isDependOnLevelOfActivity"></label>
+            </div>
+            <div class="col-md-6">
+              <label class="center-block">
+                The veteran reports after repetitive use, the loss of ROM is variable, depending on the level of activity. Provide Examples:
+              </label>
+            </div>
+            <div class="col-md-5">
+              <textarea type="text" class="form-control" formControlName="dependOnLevelOfActivityExmpl"></textarea>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isUnableToDoSelfCare" name="isUnableToDoSelfCare" formControlName="isUnableToDoSelfCare"
+                (change)="disableToggle('isUnableToDoSelfCare','selfCareActivities')">
+              <label for="isUnableToDoSelfCare"></label>
+            </div>
+            <div class="col-md-6">
+              <label class="center-block">
+                The veteran reports after repetitive use, the loss of ROM becomes significant he is unable to do self-care activities such
+                as:
+              </label>
+            </div>
+            <div class="col-md-5">
+              <textarea type="text" class="form-control" formControlName="selfCareActivities"></textarea>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isNotFeasible" name="isNotFeasible" formControlName="isNotFeasible" (change)="disableToggle('isNotFeasible','experiencesIncreased')">
+              <label for="isNotFeasible"></label>
+            </div>
+            <div class="col-md-6">
+              <label class="center-block">
+                The veteran experiences increased __________ which leads to a functional loss which is not feasible to be described in terms
+                of ROM.
+              </label>
+            </div>
+            <div class="col-md-5">
+              <textarea type="text" class="form-control" formControlName="experiencesIncreased"></textarea>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-1 round rom">
+              <input class="mr-3" type="checkbox" id="isUnableToSay" name="isUnableToSay" formControlName="isUnableToSay" (change)="disableToggle('isUnableToSay','unableToSayExpl')">
+              <label for="isUnableToSay"></label>
+            </div>
+            <div class="col-md-6">
+              <label class="center-block">
+                Unable to say without mere speculation, please explain:
+              </label>
+            </div>
+            <div class="col-md-5">
+              <textarea type="text" rows="4" class="form-control" formControlName="unableToSayExpl"></textarea>
+            </div>
+          </div>
+        </div>
+
       </div>
+      
     </div>
   </form>
 </section>

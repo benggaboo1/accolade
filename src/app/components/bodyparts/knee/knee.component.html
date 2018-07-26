@@ -5,58 +5,61 @@
       <!-- Table of Contents -->
       <ul class="contents-table" contentsTable>
         <li>
-          <a href="#medical-history" contentsLink pageScroll [pageScrollOffset]="80">Medical History</a>
+          <a href="#medical-history" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Medical History</a>
         </li>
         <li>
-          <a href="#veteran-history" contentsLink pageScroll [pageScrollOffset]="80">Veteran History</a>
+          <a href="#veteran-history" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Veteran History</a>
         </li>
         <li>
-          <a href="#diagnostic-tests" contentsLink pageScroll [pageScrollOffset]="80">Diagnostic Test/s</a>
+          <a href="#diagnostic-tests" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Diagnostic Test/s</a>
         </li>
         <li>
-          <a href="#surgical-procedure" contentsLink pageScroll [pageScrollOffset]="80">Surgical Procedure/s</a>
+          <a href="#surgical-procedure" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Surgical Procedure/s</a>
         </li>
         <li>
-          <a href="#assitive-directive" contentsLink pageScroll [pageScrollOffset]="80">Assistive Devices</a>
+          <a href="#assitive-directive" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Assistive Devices</a>
         </li>
         <li>
-          <a href="#initial-range" contentsLink pageScroll [pageScrollOffset]="80">Initial Range of Motion</a>
+          <a href="#initial-range" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Initial Range of Motion</a>
         </li>
         <li>
-          <a href="#joint-stability" contentsLink pageScroll [pageScrollOffset]="80">Joint Stability Tests</a>
+          <a href="#repetitive-testing" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Repetitive Testing</a>
         </li>
         <li>
-          <a href="#other-physical-exam" contentsLink pageScroll [pageScrollOffset]="80">Other Physical Exam Findings</a>
+          <a href="#joint-stability" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Joint Stability Tests</a>
         </li>
         <li>
-          <a href="#ankylosis" contentsLink pageScroll [pageScrollOffset]="80">Ankylosis</a>
+          <a href="#other-physical-exam" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Other Physical Exam Findings</a>
         </li>
         <li>
-          <a href="#repeated-use" contentsLink pageScroll [pageScrollOffset]="80">Repeated Use Overtime</a>
+          <a href="#ankylosis" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Ankylosis</a>
         </li>
         <li>
-          <a href="#flare-ups" contentsLink pageScroll [pageScrollOffset]="80">Flare Ups</a>
+          <a href="#repeated-use" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Repeated Use Overtime</a>
         </li>
         <li>
-          <a href="#additional-factors" contentsLink pageScroll [pageScrollOffset]="80">Additional Factors</a>
+          <a href="#flare-ups" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Flare Ups</a>
         </li>
         <li>
-          <a href="#other-pertinent-pe" contentsLink pageScroll [pageScrollOffset]="80">Other Pertinent PE</a>
+          <a href="#additional-factors" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Additional Factors</a>
         </li>
         <li>
-          <a href="#remaining-effective-function" contentsLink pageScroll [pageScrollOffset]="80">Remaining Effective Function</a>
+          <a href="#other-pertinent-pe" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Other Pertinent PE</a>
         </li>
         <li>
-          <a href="#functional-impact" contentsLink pageScroll [pageScrollOffset]="80">Functional Impact</a>
+          <a href="#remaining-effective-function" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Remaining Effective Function</a>
         </li>
         <li>
-          <a href="#remarks" contentsLink pageScroll [pageScrollOffset]="80">Remarks</a>
+          <a href="#functional-impact" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Functional Impact</a>
         </li>
         <li>
-          <a href="#additional-questions" contentsLink pageScroll [pageScrollOffset]="80">Additional Questions</a>
+          <a href="#remarks" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Remarks</a>
         </li>
         <li>
-          <a href="#rationale" contentsLink pageScroll [pageScrollOffset]="80">Rationale</a>
+          <a href="#additional-questions" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Additional Questions</a>
+        </li>
+        <li>
+          <a href="#rationale" contentsLink pageScroll [pageScrollOffset]="[pageScrollOffset]">Rationale</a>
         </li>
       </ul>
     </div>
@@ -82,6 +85,9 @@
         </div>
         <div [contentsSection]="'initial-range'">
           <app-initial-range></app-initial-range>
+        </div>
+        <div [contentsSection]="'repetitive-testing'">
+          <app-repetitive-testing></app-repetitive-testing>
         </div>
         <div [contentsSection]="'joint-stability'">
           <app-joint-stability></app-joint-stability>

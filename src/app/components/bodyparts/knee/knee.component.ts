@@ -10,8 +10,12 @@ import { PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
 export class KneeComponent implements OnInit {
 
   @ViewChild('container') private container: ElementRef;
+ 
+  pageScrollOffset;
+  
 
   ngOnInit() {
+    this.pageScrollOffset = "80";
   }
   
   constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {}

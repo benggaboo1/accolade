@@ -1,0 +1,254 @@
+<section>
+  <form [formGroup]="repTestingForm" novalidate>
+    <div class="container accForm-container">
+      <div class="accForm-title" (click)="hideShowSection()">
+        <div class="row">
+          <div class="col-md-11">
+            Repetitive Testing
+          </div>
+          <div class="col-md-1 align-right">
+            <i class="material-icons vertical-align">
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-container form-group" *ngIf="toggleSection">
+
+        <div class="row align-center">
+          <div class="col-md-2">
+            <label class="center-block">
+            </label>
+          </div>
+          <div class="col-md-10 initialRangeMatrix">
+            <div class="row">
+              <div class="col-md-2 offset-6">
+                <label class="center-block">ROM
+                </label>
+              </div>
+              <div class="col-md-2">
+                <label class="center-block">Pain Score
+                </label>
+              </div>
+              <div class="col-md-2">
+                <label class="center-block">Muscle Strength
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-2 align-center">
+            <label class="center-block">Right
+            </label>
+          </div>
+          <div class="col-md-10 initialRangeMatrix">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="col-md-12">
+                  <label class="center-block">Flexion in degrees (0-140)
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-3 align-center">
+                <div class="col-md-12 ">
+                  <label class="center-block">Active
+                  </label>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <label class="center-block">Passive
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="col-md-12">
+                  <label class="center-block">Extension (140-0)
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-3 align-center">
+                <div class="col-md-12">
+                  <label class="center-block">Active
+                  </label>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <label class="center-block">Passive
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+
+        <div class="row">
+          <div class="col-md-2 align-center">
+            <label class="center-block">Left
+            </label>
+          </div>
+          <div class="col-md-10 initialRangeMatrix">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="col-md-12 ">
+                  <label class="center-block">Flexion in degrees (0-140)
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-3 align-center">
+                <div class="col-md-12">
+                  <label class="center-block">Active
+                  </label>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <label class="center-block">Passive
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="col-md-12">
+                  <label class="center-block">Extension (140-0)
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-3 align-center">
+                <div class="col-md-12">
+                  <label class="center-block">Active
+                  </label>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <label class="center-block">Passive
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+                <hr>
+                <div class="col-md-12">
+                  <input type="number" class="form-control" formControlName="diagnosis" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

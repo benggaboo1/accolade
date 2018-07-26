@@ -530,7 +530,7 @@
 .accForm-title i{
   cursor: pointer;
 }
-.medical-history .row{
+.section-container .row{
   align-items: center;
 }
 
@@ -637,14 +637,14 @@ body{
   margin-left: 10px;
 }
 
-.medical-history{
+.section-container{
   padding: 20px;
     padding-bottom: 30px;
   background-color: #c4d8f1;
   font-size: 13px;
 } 
 
-.medical-history .form-control{
+.section-container .form-control{
   font-size: 12px;
   line-height: 1;
   border: 1px solid #9b9c9c17;
@@ -652,7 +652,7 @@ body{
 }
 
 
-.medical-history input, .medical-history select{
+.section-container input, .section-container select{
   height: 40px;
 }
 

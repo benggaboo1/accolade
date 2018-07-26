@@ -34,6 +34,16 @@ export class RepeatedUseComponent implements OnInit {
       other1Right: '', other1Left: '',
       other1NameRight: '', other1NameLeft: '', 
       describeRangeInMotionRight: '', describeRangeInMotionLeft: '', 
+      isFunctionalLossPresent: false,
+      isROMLossMinimal: false,
+      isPainIncrease: false, 
+      isPainWeakneesInstability: false,
+      painWeakneesInstabilityAbility: new FormControl({ value: '', disabled: true }),
+      isDependOnTypeOfMovement: '', dependOnTypeOfMovementExmpl: new FormControl({ value: '', disabled: true }),
+      isDependOnLevelOfActivity: '', dependOnLevelOfActivityExmpl: new FormControl({ value: '', disabled: true }),
+      isUnableToDoSelfCare: '', selfCareActivities: new FormControl({ value: '', disabled: true }),
+      isNotFeasible: '', experiencesIncreased: new FormControl({ value: '', disabled: true }),
+      isUnableToSay: '', unableToSayExpl: new FormControl({ value: '', disabled: true }),
     });
   };
 
@@ -41,5 +51,21 @@ export class RepeatedUseComponent implements OnInit {
     this.toggleSection = !this.toggleSection;
   }
 
+  showRangeOfMotionDescription(){
+    let rightROM = this.repeatedUseForm.get('describeRangeInMotionRight').value;
+    let leftROM = this.repeatedUseForm.get('describeRangeInMotionLeft').value;
 
+    if(rightROM == 'no' || leftROM == 'no'){
+      return true;
+    }
+  }
+
+  disableToggle(checkbox:string, textarea: string){
+    if(this.repeatedUseForm.get(checkbox).value == true){
+      this.repeatedUseForm.controls[textarea].enable();
+    }else{
+      this.repeatedUseForm.controls[textarea].disable();
+      this.repeatedUseForm.controls[textarea].setValue("");
+    }
+  }
 }
